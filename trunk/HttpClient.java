@@ -42,7 +42,8 @@ public class HttpClient{
         bootstrap.setPipelineFactory(new HttpClientPipelineFactory()); 
         allChannels = new DefaultChannelGroup();
     	}
-     
+ 
+ 
     public void setOption(String key, Object value) {
     	bootstrap.setOption(key, value);
     }
