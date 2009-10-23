@@ -115,12 +115,12 @@ public class HttpClient{
         HttpClient hc = new HttpClient();
         
         try {
-        	hc.get(url).addLast("handler", new HttpResponseHandler());
-        	//等待结果，因为 get是立即返回。
-        	//Thread.sleep(4000);
-        	}catch(Exception ex){
+        	ChannelPipeline line = hc.get(url);
+        	line.addLast("handler", new HttpResponseHandler());
+        	Thread.sleep(4000);
+        	} catch(Exception ex) {
         		ex.printStackTrace();
-        		}
+        	}
         hc.close();              
     }                                                                               
 }                                                                                   
